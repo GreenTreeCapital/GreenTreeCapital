@@ -3,184 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscriptions – Green Tree Capital</title>
+    <title>Pricing – All Day PC Repairs</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f3f3e9;
-            color: #1e3a2d;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: white;
         }
 
         header {
-            background-color: #e8e5d8;
+            background-color: #111;
             padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #1e3a2d;
+            text-align: center;
+            border-bottom: 2px solid #444;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        header img {
+            max-width: 180px;
+            height: auto;
         }
 
-        .logo img {
-            height: 70px;
+        nav {
+            margin-top: 15px;
         }
 
         nav a {
+            color: #4da3ff;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            color: #1e3a2d;
+            margin: 0 15px;
+            font-size: 18px;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
-        .pricing-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 60px auto;
-            max-width: 1200px;
-            flex-wrap: wrap;
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
         }
 
-        .card {
-            background-color: white;
-            width: 260px;
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid #1e3a2d;
+        h1 {
             text-align: center;
+            color: #4da3ff;
         }
 
-        .card h2 {
-            margin-bottom: 10px;
-            font-size: 1.8rem;
+        .pricing-option {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
         }
 
-        .card p.price {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 20px;
+        .pricing-option h2 {
+            color: #4da3ff;
         }
 
-        ul.features {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        ul.features li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        ul.features li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #1e3a2d;
-        }
-
-        .btn {
-            background-color: #1e3a2d;
-            color: white;
-            padding: 12px 20px;
-            display: inline-block;
-            border-radius: 6px;
-            margin-top: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background-color: #2f5745;
+        .pricing-option p {
+            line-height: 1.6;
         }
 
         footer {
-            text-align: center;
+            background-color: #111;
             padding: 20px;
-            margin-top: 60px;
-            border-top: 2px solid #1e3a2d;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 2px solid #444;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
-        <img src="logo.png" alt="Green Tree Capital Logo">
-        <h2>Green Tree Capital</h2>
-    </div>
-
+    <img src="logo.png" alt="All Day PC Repairs Logo">
     <nav>
         <a href="index.html">Home</a>
-        <a href="subscriptions.html">Subscriptions</a>
+        <a href="Pricing.html">Pricing</a>
         <a href="https://discord.gg/mRhAjSqR" target="_blank">Join Discord</a>
     </nav>
 </header>
 
-<h1 style="text-align:center; margin-top:40px;">Subscription Plans</h1>
+<div class="container">
+    <h1>Our Pricing Plans</h1>
 
-<div class="pricing-container">
-
-    <!-- Tier 1 -->
-    <div class="card">
-        <h2>Tier 1</h2>
-        <p class="price">$5 / month</p>
-        <ul class="features">
-            <li>Market news updates</li>
-        </ul>
-        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Join Tier 1</a>
+    <div class="pricing-option">
+        <h2>Basic Support – £4.99/month</h2>
+        <p>Includes basic PC diagnostics, general support, and access to ticket support.</p>
     </div>
 
-    <!-- Tier 2 -->
-    <div class="card">
-        <h2>Tier 2</h2>
-        <p class="price">$7.50 / month</p>
-        <ul class="features">
-            <li>Market news updates</li>
-            <li>Forex insights</li>
-        </ul>
-        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Join Tier 2</a>
+    <div class="pricing-option">
+        <h2>Advanced Support – £9.99/month</h2>
+        <p>Includes all basic support plus priority assistance and extended remote help.</p>
     </div>
 
-    <!-- Tier 3 -->
-    <div class="card">
-        <h2>Tier 3</h2>
-        <p class="price">$10 / month</p>
-        <ul class="features">
-            <li>Market news updates</li>
-            <li>Forex insights</li>
-            <li>Portfolio planning</li>
-        </ul>
-        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Join Tier 3</a>
-    </div>
-
-    <!-- Add-on -->
-    <div class="card" style="border-color:#6b4f1b;">
-        <h2>CFA Add-On</h2>
-        <p class="price">$5 / month</p>
-        <ul class="features">
-            <li>Revision support</li>
-            <li>Can be added to any tier</li>
-        </ul>
-        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Add CFA Option</a>
+    <div class="pricing-option">
+        <h2>Premium Support – £14.99/month</h2>
+        <p>Includes full system optimisation, malware removal, priority same-day help, and more.</p>
     </div>
 
 </div>
 
 <footer>
-    © 2025 Green Tree Capital — All Rights Reserved
+    &copy; 2025 All Day PC Repairs – All rights reserved.
 </footer>
 
 </body>
