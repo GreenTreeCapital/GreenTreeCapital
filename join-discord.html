@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join the Discord | Green Tree Capital</title>
+    <style>
+        body { margin:0; font-family:Arial,sans-serif; background:#f3f3e9; color:#1e3a2d; }
+        a { color:#1e3a2d; }
+        header { background:#e8e5d8; padding:16px 32px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #1e3a2d; }
+        .logo { display:flex; align-items:center; gap:12px; }
+        .logo img { height:52px; }
+        .logo-text { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; font-weight:bold; }
+        nav a { text-decoration:none; font-weight:bold; margin-left:18px; color:#1e3a2d; font-size:0.95rem; border-bottom:2px solid transparent; padding-bottom:4px; }
+        nav a:hover { border-bottom:2px solid #2f5745; }
+        nav a.active { border-bottom:2px solid #1e3a2d; }
+        .container { max-width:900px; margin:40px auto 50px; padding:0 20px; }
+        h1 { font-size:2.1rem; margin-bottom:10px; }
+        p { line-height:1.6; font-size:0.98rem; }
+        .tier-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:25px; }
+        .card { background:#f7f6ec; border:1px solid #d3d0c0; border-radius:6px; padding:16px 18px; }
+        .card h2 { margin-top:0; font-size:1.1rem; }
+        ul { font-size:0.95rem; line-height:1.6; padding-left:18px; }
+        .btn { display:inline-block; background:#1e3a2d; color:#fff; padding:10px 22px; border-radius:4px; text-decoration:none; font-size:0.96rem; font-weight:bold; letter-spacing:0.03em; margin-top:20px; }
+        .btn:hover { background:#2f5745; }
+        .disclaimer-box { font-size:0.85rem; line-height:1.5; padding:14px 18px; border:1px solid #1e3a2d; background:#eceadd; margin-top:30px; }
+        footer { text-align:center; padding:14px 20px; border-top:2px solid #1e3a2d; font-size:0.85rem; background:#e8e5d8; }
+        footer a { text-decoration:none; margin-left:8px; }
+        footer a:hover { text-decoration:underline; }
+        @media(max-width:720px){ header{flex-direction:column; align-items:flex-start; gap:10px;} nav a{margin-left:0;margin-right:12px;} }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Green Tree Capital Logo">
+        <div class="logo-text">Green Tree Capital</div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="market-news.html">Market News</a>
+        <a href="fund-performance.html">Fund Performance</a>
+        <a href="join-discord.html" class="active">Join the Discord</a>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <h1>Join the Green Tree Capital Discord</h1>
+        <p>
+            The Discord server is where we discuss markets in real time, walk through
+            position changes and share more frequent updates than appear on the website.
+        </p>
+
+        <div class="tier-grid">
+            <div class="card">
+                <h2>Free Tier</h2>
+                <ul>
+                    <li>Access to main community channels</li>
+                    <li>Delayed summaries of key portfolio changes</li>
+                    <li>Occasional market notes and Q&amp;A</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Paid Supporter Tier</h2>
+                <ul>
+                    <li>More frequent position updates as they change</li>
+                    <li>Deeper written explanations behind moves</li>
+                    <li>Priority for topic suggestions and questions</li>
+                </ul>
+                <p style="font-size:0.9rem;">
+                    Payment processing and subscription management are handled by external
+                    platforms (e.g. Patreon). Details are provided inside the server.
+                </p>
+            </div>
+        </div>
+
+        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank" rel="noopener">
+            Open Discord Invite
+        </a>
+
+        <div class="disclaimer-box">
+            Access to the Discord server is for educational discussion only and does not
+            provide personalised financial advice or constitute an investment service.
+            Any paid tier is a way to support the project and gain additional educational
+            content, not to purchase investment recommendations or portfolio management.
+        </div>
+    </div>
+</main>
+
+<footer>
+    © 2025 Green Tree Capital — Educational Only
+    <a href="disclaimer.html">Disclaimer</a>
+</footer>
+
+</body>
+</html>
