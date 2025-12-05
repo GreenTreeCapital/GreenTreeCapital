@@ -16,6 +16,7 @@
         --beige: #e8e5d8;
         --cream: #f3f3e9;
         --gold: #c4a04a;
+        --soft-gold: #f3ebcf;
     }
 
     body {
@@ -29,7 +30,7 @@
         color: var(--green-dark);
     }
 
-    /* ---------- SHARED HEADER (same as other pages) ---------- */
+    /* ---------- SHARED HEADER (consistent with other pages) ---------- */
     header {
         background-color: var(--beige);
         padding: 16px 40px;
@@ -177,28 +178,62 @@
         background: #ffffff;
         width: 270px;
         border-radius: 18px;
-        padding: 25px;
+        padding: 25px 22px 28px;
         border: 2px solid var(--green-dark);
-        text-align: center;
+        text-align: left;
         transition: 0.3s ease;
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tier::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(191,210,200,0.06), rgba(196,160,74,0.03));
+        pointer-events: none;
     }
 
     .tier:hover {
-        transform: translateY(-12px);
+        transform: translateY(-10px);
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
+    .tier-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .tier-header-line {
+        width: 38px;
+        height: 3px;
+        background: var(--green-medium);
+        border-radius: 999px;
+        margin-bottom: 8px;
+    }
+
     .tier h2 {
-        margin-top: 6px;
-        margin-bottom: 4px;
+        margin: 0 0 4px;
         font-size: 1.3rem;
     }
 
     .tier-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
         color: #44594c;
+        margin-bottom: 14px;
+    }
+
+    .tag-pill {
+        display: inline-block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        border-radius: 999px;
+        padding: 3px 9px;
+        background: #f7f6ec;
+        border: 1px solid #d3d0c0;
         margin-bottom: 10px;
     }
 
@@ -207,24 +242,28 @@
         box-shadow: 0 0 14px rgba(196, 160, 74, 0.6);
     }
 
+    .best .tier-header-line {
+        background: var(--gold);
+    }
+
     .best::before {
         content: "MOST POPULAR";
         position: absolute;
         top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
+        right: 18px;
         background: var(--gold);
         color: white;
         padding: 4px 10px;
-        border-radius: 6px;
+        border-radius: 999px;
         font-weight: bold;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        z-index: 2;
     }
 
     .price {
-        font-size: 2rem;
+        font-size: 1.9rem;
         font-weight: bold;
-        margin: 10px 0 5px;
+        margin: 12px 0 2px;
     }
 
     .billing-label {
@@ -233,35 +272,53 @@
         margin-bottom: 15px;
     }
 
+    .section-heading {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #44594c;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
     .features {
-        text-align: left;
-        padding-left: 8px;
-        margin-top: 10px;
+        padding-left: 0;
+        margin: 0 0 10px;
     }
 
     .features li {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         list-style: none;
-        font-size: 0.95rem;
+        font-size: 0.93rem;
+        line-height: 1.45;
+        display: flex;
+        align-items: flex-start;
     }
 
     .features i {
         color: var(--green-dark);
         margin-right: 8px;
         width: 16px;
-        text-align: center;
+        margin-top: 2px;
+    }
+
+    .tier-footer-note {
+        font-size: 0.8rem;
+        color: #44594c;
+        margin-top: 6px;
     }
 
     .btn {
         background: var(--green-dark);
         color: white;
-        padding: 11px 20px;
+        padding: 10px 18px;
         text-decoration: none;
         border-radius: 6px;
         display: inline-block;
         font-weight: bold;
-        margin-top: 18px;
-        font-size: 0.95rem;
+        margin-top: 16px;
+        font-size: 0.9rem;
+        text-align: center;
     }
 
     .btn:hover {
@@ -314,6 +371,10 @@
         .logo img {
             height: 80px;
         }
+
+        .tier {
+            width: 100%;
+        }
     }
 </style>
 
@@ -342,7 +403,7 @@
 <main class="page-wrapper">
     <h1>Choose Your Plan</h1>
     <p class="page-subtitle">
-        Support the project and unlock more frequent educational updates.  
+        Support the project and unlock more frequent educational messages on markets, forex and portfolio construction.  
         No contracts. Cancel any time.
     </p>
 
@@ -364,66 +425,128 @@
 
         <!-- Tier 1 -->
         <div class="tier">
-            <h2>Tier 1</h2>
-            <p class="tier-subtitle">For readers who want structured written updates.</p>
-            <p class="price" data-month="5" data-year="48">$5 / month</p>
-            <div class="billing-label">Billed monthly (USD)</div>
+            <div class="tier-content">
+                <div class="tier-header-line"></div>
+                <span class="tag-pill">Foundations</span>
+                <h2>Tier 1</h2>
+                <p class="tier-subtitle">For readers who want structured written updates without real-time noise.</p>
 
-            <ul class="features">
-                <li><i class="fa-solid fa-newspaper"></i>Regular market news summaries</li>
-                <li><i class="fa-solid fa-list-ul"></i>Key macro and index highlights</li>
-                <li><i class="fa-solid fa-user-group"></i>Access to Tier 1 Discord channels</li>
-            </ul>
+                <p class="price" data-month="5" data-year="48">$5 / month</p>
+                <div class="billing-label">Approx. weekly written updates (USD)</div>
 
-            <a class="btn" href="#" target="_blank" rel="noopener">Join Tier 1</a>
+                <div class="section-heading">Inside this tier</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-newspaper"></i><span><strong>Market recap messages</strong> summarising major moves in indices, rates and key sectors.</span></li>
+                    <li><i class="fa-solid fa-chart-bar"></i><span><strong>Macro highlight notes</strong> on data releases and central bank decisions.</span></li>
+                    <li><i class="fa-solid fa-envelope-open-text"></i><span><strong>Short portfolio diary posts</strong> explaining our own positioning at a high level.</span></li>
+                </ul>
+
+                <div class="section-heading">Discord access</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-user-group"></i><span>Read-only access to <em>#market-diary</em> and core community channels.</span></li>
+                    <li><i class="fa-solid fa-clock-rotate-left"></i><span>Position summaries shared with a short delay after changes are made.</span></li>
+                </ul>
+
+                <p class="tier-footer-note">
+                    Best suited if you want a clean weekly digest to read, rather than live commentary.
+                </p>
+
+                <a class="btn" href="#" target="_blank" rel="noopener">Join Tier 1</a>
+            </div>
         </div>
 
         <!-- Tier 2 -->
         <div class="tier">
-            <h2>Tier 2</h2>
-            <p class="tier-subtitle">For followers who want more detail and FX focus.</p>
-            <p class="price" data-month="7.5" data-year="72">$7.50 / month</p>
-            <div class="billing-label">Billed monthly (USD)</div>
+            <div class="tier-content">
+                <div class="tier-header-line"></div>
+                <span class="tag-pill">FX Focus</span>
+                <h2>Tier 2</h2>
+                <p class="tier-subtitle">For followers who care about the FX tape and shorter-term swings.</p>
 
-            <ul class="features">
-                <li><i class="fa-solid fa-newspaper"></i>All Tier 1 market news content</li>
-                <li><i class="fa-solid fa-dollar-sign"></i>Forex and rates commentary</li>
-                <li><i class="fa-solid fa-clock"></i>More frequent intramonth updates</li>
-            </ul>
+                <p class="price" data-month="7.5" data-year="72">$7.50 / month</p>
+                <div class="billing-label">Multiple touchpoints per week (USD)</div>
 
-            <a class="btn" href="#" target="_blank" rel="noopener">Join Tier 2</a>
+                <div class="section-heading">Inside this tier</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-newspaper"></i><span>Everything in <strong>Tier 1</strong>, including market recap messages.</span></li>
+                    <li><i class="fa-solid fa-dollar-sign"></i><span><strong>Forex insight posts</strong> covering the major pairs we watch, levels of interest and scenario planning.</span></li>
+                    <li><i class="fa-solid fa-wave-square"></i><span><strong>Short-term tactical views</strong> on indices and FX around major events.</span></li>
+                </ul>
+
+                <div class="section-heading">Discord access</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-hashtag"></i><span>Access to a dedicated <em>#fx-and-rates</em> channel for our commentary.</span></li>
+                    <li><i class="fa-solid fa-bell"></i><span>Educational messages when we open or close our own FX positions, with reasoning.</span></li>
+                </ul>
+
+                <p class="tier-footer-note">
+                    Ideal if you follow currencies and want more colour on why we like or dislike certain pairs.
+                </p>
+
+                <a class="btn" href="#" target="_blank" rel="noopener">Join Tier 2</a>
+            </div>
         </div>
 
         <!-- Tier 3 -->
         <div class="tier best">
-            <h2>Tier 3</h2>
-            <p class="tier-subtitle">Full access for those closely following our journey.</p>
-            <p class="price" data-month="10" data-year="96">$10 / month</p>
-            <div class="billing-label">Billed monthly (USD)</div>
+            <div class="tier-content">
+                <div class="tier-header-line"></div>
+                <span class="tag-pill">Full Access</span>
+                <h2>Tier 3</h2>
+                <p class="tier-subtitle">Our most complete view of how we build and adjust the overall portfolio.</p>
 
-            <ul class="features">
-                <li><i class="fa-solid fa-newspaper"></i>All Tier 1 &amp; 2 content</li>
-                <li><i class="fa-solid fa-chart-line"></i>Deeper portfolio breakdowns</li>
-                <li><i class="fa-solid fa-comments"></i>Priority Q&amp;A in Discord</li>
-            </ul>
+                <p class="price" data-month="10" data-year="96">$10 / month</p>
+                <div class="billing-label">Ongoing updates + monthly letter (USD)</div>
 
-            <a class="btn" href="#" target="_blank" rel="noopener">Join Tier 3</a>
+                <div class="section-heading">Inside this tier</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-layer-group"></i><span>All content from <strong>Tier 1 &amp; Tier 2</strong>.</span></li>
+                    <li><i class="fa-solid fa-chart-line"></i><span><strong>Portfolio planning messages</strong> explaining allocation shifts across long-term, medium-term, equity and FX sleeves.</span></li>
+                    <li><i class="fa-solid fa-file-alt"></i><span>A more detailed <strong>monthly portfolio letter</strong> covering performance drivers and lessons learned.</span></li>
+                </ul>
+
+                <div class="section-heading">Discord access</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-comments"></i><span>Priority in Q&amp;A threads where we clarify our thinking around trades and risk.</span></li>
+                    <li><i class="fa-solid fa-hourglass-half"></i><span>Earlier access to our own entry/exit commentary (still educational, not trade signals).</span></li>
+                </ul>
+
+                <p class="tier-footer-note">
+                    Best if you want to follow the full journey: how positions fit together into an overall plan.
+                </p>
+
+                <a class="btn" href="#" target="_blank" rel="noopener">Join Tier 3</a>
+            </div>
         </div>
 
         <!-- CFA Add-on -->
         <div class="tier">
-            <h2>CFA Add-On</h2>
-            <p class="tier-subtitle">Optional study support alongside any tier.</p>
-            <p class="price" data-month="5" data-year="48">$5 / month</p>
-            <div class="billing-label">Billed monthly (USD)</div>
+            <div class="tier-content">
+                <div class="tier-header-line"></div>
+                <span class="tag-pill">Study Add-On</span>
+                <h2>CFA Add-On</h2>
+                <p class="tier-subtitle">Optional study support alongside any main tier.</p>
 
-            <ul class="features">
-                <li><i class="fa-solid fa-book"></i>Access to CFA study discussion channels</li>
-                <li><i class="fa-solid fa-list-check"></i>Shared revision checklists and notes</li>
-                <li><i class="fa-solid fa-plus"></i>Can be added to any main tier</li>
-            </ul>
+                <p class="price" data-month="5" data-year="48">$5 / month</p>
+                <div class="billing-label">Layered on top of another tier (USD)</div>
 
-            <a class="btn" href="#" target="_blank" rel="noopener">Add CFA Plan</a>
+                <div class="section-heading">Inside this add-on</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-book"></i><span><strong>Revision prompts</strong> and accountability messages for upcoming exam windows.</span></li>
+                    <li><i class="fa-solid fa-list-check"></i><span>Shared <strong>topic checklists</strong> and high-level summaries of concepts we found tricky.</span></li>
+                </ul>
+
+                <div class="section-heading">Discord access</div>
+                <ul class="features">
+                    <li><i class="fa-solid fa-graduation-cap"></i><span>Access to a dedicated <em>#cfa-study</em> discussion channel.</span></li>
+                </ul>
+
+                <p class="tier-footer-note">
+                    Designed as a light companion for your own self-study, not a tutoring or exam-prep service.
+                </p>
+
+                <a class="btn" href="#" target="_blank" rel="noopener">Add CFA Plan</a>
+            </div>
         </div>
 
     </div>
@@ -432,7 +555,8 @@
         Subscriptions support the Green Tree Capital project and provide additional
         educational content and community access. They do not create a client–advisor
         relationship, do not constitute personalised financial advice and do not
-        guarantee any financial returns.
+        guarantee any financial returns. All messages, including those covering forex
+        insights and portfolio planning, are for information and education only.
     </div>
 </main>
 
