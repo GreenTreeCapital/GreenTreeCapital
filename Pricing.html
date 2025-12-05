@@ -3,83 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing – All Day PC Repairs</title>
+    <title>Pricing – Green Tree Capital</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #0d0d0d;
-            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3e9;
+            color: #1e3a2d;
         }
 
         header {
-            background-color: #111;
+            background-color: #e8e5d8;
             padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #1e3a2d;
         }
 
-        header img {
-            max-width: 180px;
-            height: auto;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        nav {
-            margin-top: 15px;
+        .logo img {
+            height: 70px;
         }
 
         nav a {
-            color: #4da3ff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
+            margin-left: 20px;
+            font-weight: bold;
+            color: #1e3a2d;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
         h1 {
             text-align: center;
-            color: #4da3ff;
+            margin-top: 40px;
+            font-size: 2.5rem;
         }
 
-        .pricing-option {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+        .pricing-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
         }
 
-        .pricing-option h2 {
-            color: #4da3ff;
+        .tier {
+            background-color: white;
+            border: 2px solid #1e3a2d;
+            border-radius: 16px;
+            padding: 25px;
+            width: 260px;
+            text-align: center;
+            transition: 0.25s;
         }
 
-        .pricing-option p {
-            line-height: 1.6;
+        /* WHOOP-style hover lift */
+        .tier:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .tier h2 {
+            font-size: 1.8rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .features li {
+            margin-bottom: 12px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #1e3a2d;
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: #1e3a2d;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #2f5745;
+        }
+
+        /* Highlight Tier 3 like WHOOP's "Best Value" plan */
+        .best-value {
+            border-color: #c4a04a;
+            box-shadow: 0 0 12px rgba(196,160,74,0.5);
+        }
+
+        .best-label {
+            background-color: #c4a04a;
+            color: white;
+            padding: 6px 10px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
         footer {
-            background-color: #111;
-            padding: 20px;
             text-align: center;
-            margin-top: 40px;
-            border-top: 2px solid #444;
+            padding: 20px;
+            margin-top: 60px;
+            border-top: 2px solid #1e3a2d;
         }
     </style>
 </head>
+
 <body>
 
 <header>
-    <img src="logo.png" alt="All Day PC Repairs Logo">
+    <div class="logo">
+        <img src="logo.png" alt="Green Tree Capital Logo">
+        <h2>Green Tree Capital</h2>
+    </div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="Pricing.html">Pricing</a>
@@ -87,29 +158,77 @@
     </nav>
 </header>
 
-<div class="container">
-    <h1>Our Pricing Plans</h1>
+<h1>Choose Your Tier</h1>
 
-    <div class="pricing-option">
-        <h2>Basic Support – £4.99/month</h2>
-        <p>Includes basic PC diagnostics, general support, and access to ticket support.</p>
+<div class="pricing-wrapper">
+
+    <!-- Tier 1 -->
+    <div class="tier">
+        <h2>Tier 1</h2>
+        <p class="price">$5 / month</p>
+
+        <div class="features">
+            <ul>
+                <li>Market news updates</li>
+            </ul>
+        </div>
+
+        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Join Tier 1</a>
     </div>
 
-    <div class="pricing-option">
-        <h2>Advanced Support – £9.99/month</h2>
-        <p>Includes all basic support plus priority assistance and extended remote help.</p>
+    <!-- Tier 2 -->
+    <div class="tier">
+        <h2>Tier 2</h2>
+        <p class="price">$7.50 / month</p>
+
+        <div class="features">
+            <ul>
+                <li>Market news updates</li>
+                <li>Forex insights</li>
+            </ul>
+        </div>
+
+        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Join Tier 2</a>
     </div>
 
-    <div class="pricing-option">
-        <h2>Premium Support – £14.99/month</h2>
-        <p>Includes full system optimisation, malware removal, priority same-day help, and more.</p>
+    <!-- Tier 3 (highlighted) -->
+    <div class="tier best-value">
+        <span class="best-label">Most Popular</span>
+        <h2>Tier 3</h2>
+        <p class="price">$10 / month</p>
+
+        <div class="features">
+            <ul>
+                <li>Market news updates</li>
+                <li>Forex insights</li>
+                <li>Portfolio planning</li>
+            </ul>
+        </div>
+
+        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Join Tier 3</a>
+    </div>
+
+    <!-- Add-On -->
+    <div class="tier" style="border-color:#6b4f1b;">
+        <h2>CFA Add-On</h2>
+        <p class="price">$5 / month</p>
+
+        <div class="features">
+            <ul>
+                <li>Revision support</li>
+                <li>Add-on for any tier</li>
+            </ul>
+        </div>
+
+        <a class="btn" href="https://discord.gg/mRhAjSqR" target="_blank">Add CFA Plan</a>
     </div>
 
 </div>
 
 <footer>
-    &copy; 2025 All Day PC Repairs – All rights reserved.
+    © 2025 Green Tree Capital — All Rights Reserved
 </footer>
 
 </body>
 </html>
+
